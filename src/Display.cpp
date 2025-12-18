@@ -1,6 +1,7 @@
 #include "Display.h"
 #include "Grid.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #include <iostream>
 
 Display::Display(){
@@ -20,6 +21,11 @@ Display::Display(){
 
 }
 
+void Display::present() {
+    SDL_RenderPresent(renderer);
+}
+
+
 void Display::reset(){
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderClear(renderer);
@@ -27,7 +33,7 @@ void Display::reset(){
 }
 
 void Display::drawGrid(){
-    // Fond général
+
     SDL_SetRenderDrawColor(renderer, 250, 248, 239, 255);
     SDL_RenderClear(renderer);
     
@@ -56,6 +62,25 @@ void Display::drawGrid(){
     
     SDL_RenderPresent(renderer);
 }
+
+void Display::drawTile(int value, int row, int col) {
+    const int sizeGrid = 4;
+    const int margin = 100;
+    const int cellPadding = 15;
+    const int spaceDisponible = windowSize - 2 * margin;
+    const int cellSize = (spaceDisponible - cellPadding * (sizeGrid + 1)) / sizeGrid;
+
+    SDL_Rect tile = {
+        margin + cellPadding + col * (cellSize + cellPadding),
+        margin + cellPadding + row * (cellSize + cellPadding),
+        cellSize,
+        cellSize
+    };
+
+    SDL_SetRenderDrawColor(renderer, 238, 228, 218, 255);
+    SDL_RenderFillRect(renderer, &tile);
+}
+
 
 void Display::drawScore(int score, int best){
 

@@ -15,9 +15,11 @@ private:
 public:
     Display();
 
+    void present();
     void reset();
 
     void drawGrid(); //le parametre = const Grid& grid
+    void drawTile(int value, int row, int col);
     void drawScore(int score, int best);
     void drawMessage(const std::string& message);
 };
