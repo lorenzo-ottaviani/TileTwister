@@ -1,15 +1,18 @@
 #include "../include/Grid.hpp"
 #include <SDL.h>
-#include <cstdlib> 
+#include <cstdlib>
+#include <ctime>
 
 Grid::Grid(){
+    srand(time(nullptr));
     reset();
+    addTiles();
+    addTiles();
 }
 
 void Grid::reset(){
-
-    for (int i=0; i < 4; i++ ){
-        for (int j=0; j < 4; j++){
+    for (int i=0; i < SIZE; i++ ){
+        for (int j=0; j < SIZE; j++){
             cases[i][j] = 0;
         }
     }

@@ -2,9 +2,10 @@
 
 class Grid{
 private:
-    int cases[4][4];
-    
-public: 
+    static const int SIZE = 4;
+    int cases[SIZE][SIZE];
+public:
+    Grid();
     bool move(char direction);
     void addTiles();
     bool canMove();
