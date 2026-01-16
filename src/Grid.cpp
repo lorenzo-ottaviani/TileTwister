@@ -1,7 +1,8 @@
-#include "../include/Grid.hpp"
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <cstdlib>
 #include <ctime>
+
+#include "Grid.hpp"
 
 Grid::Grid(){
     srand(time(nullptr));
@@ -27,4 +28,3 @@ void Grid::addTiles(){
     int value = (rand() % 2 == 0) ? 2 : 4;
     cases [i][j] = value; 
 }
-

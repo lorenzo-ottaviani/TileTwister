@@ -1,8 +1,9 @@
-#include "Display.h"
-#include "Grid.h"
+#include <iostream>
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
-#include <iostream>
+
+#include "Display.hpp"
 
 Display::Display(){
 
@@ -129,4 +130,3 @@ void Display::drawScore(int score, int best){
 void Display::drawMessage(const std::string& message){
 
 }
-
