@@ -1,15 +1,13 @@
+#define SDL_MAIN_HANDLED
 #include <SDL2/SDL.h>
+#include "Display.h"
+#include <iostream>
+#include <filesystem>
 
-int main(int argc, char* argv[]) {
+
+int main() {
     SDL_Init(SDL_INIT_VIDEO);
-
-    SDL_Window* window = SDL_CreateWindow(
-        "SDL2 OK",
-        SDL_WINDOWPOS_CENTERED,
-        SDL_WINDOWPOS_CENTERED,
-        640, 480,
-        0
-    );
+    Display display;
 
     bool running = true;
     SDL_Event event;
@@ -20,11 +18,20 @@ int main(int argc, char* argv[]) {
                 running = false;
             }
         }
-        // Optionnel : attendre un peu pour limiter l’utilisation CPU
-        SDL_Delay(10);
+
+        display.reset();
+        display.drawGrid();
+
+        display.drawTile(16, 1, 1);
+        display.drawTile(32, 2, 0);
+        display.drawTile(64, 0, 0);
+        display.drawTile(128, 2, 2);
+        display.drawScore(20,20);
+        display.present();
+
+        SDL_Delay(30);
     }
 
-    SDL_DestroyWindow(window);
     SDL_Quit();
     return 0;
 }

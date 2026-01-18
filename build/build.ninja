@@ -47,7 +47,7 @@ build cmake_object_order_depends_target_2048: phony || .
 build CMakeFiles/2048.dir/src/main.cpp.obj: CXX_COMPILER__2048_unscanned_ C$:/Users/abdel/Desktop/TileTwister/src/main.cpp || cmake_object_order_depends_target_2048
   DEP_FILE = CMakeFiles\2048.dir\src\main.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/libs/SDL2-2.32.10/i686-w64-mingw32/include
+  INCLUDES = -IC:/libs/SDL2-2.32.10/x86_64-w64-mingw32/include -IC:/Users/abdel/Desktop/TileTwister/include
   OBJECT_DIR = CMakeFiles\2048.dir
   OBJECT_FILE_DIR = CMakeFiles\2048.dir\src
   TARGET_SUPPORT_DIR = CMakeFiles\2048.dir
@@ -55,23 +55,23 @@ build CMakeFiles/2048.dir/src/main.cpp.obj: CXX_COMPILER__2048_unscanned_ C$:/Us
 build CMakeFiles/2048.dir/src/Game.cpp.obj: CXX_COMPILER__2048_unscanned_ C$:/Users/abdel/Desktop/TileTwister/src/Game.cpp || cmake_object_order_depends_target_2048
   DEP_FILE = CMakeFiles\2048.dir\src\Game.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/libs/SDL2-2.32.10/i686-w64-mingw32/include
+  INCLUDES = -IC:/libs/SDL2-2.32.10/x86_64-w64-mingw32/include -IC:/Users/abdel/Desktop/TileTwister/include
   OBJECT_DIR = CMakeFiles\2048.dir
   OBJECT_FILE_DIR = CMakeFiles\2048.dir\src
   TARGET_SUPPORT_DIR = CMakeFiles\2048.dir
 
-build CMakeFiles/2048.dir/src/Grille.cpp.obj: CXX_COMPILER__2048_unscanned_ C$:/Users/abdel/Desktop/TileTwister/src/Grille.cpp || cmake_object_order_depends_target_2048
-  DEP_FILE = CMakeFiles\2048.dir\src\Grille.cpp.obj.d
+build CMakeFiles/2048.dir/src/Grid.cpp.obj: CXX_COMPILER__2048_unscanned_ C$:/Users/abdel/Desktop/TileTwister/src/Grid.cpp || cmake_object_order_depends_target_2048
+  DEP_FILE = CMakeFiles\2048.dir\src\Grid.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/libs/SDL2-2.32.10/i686-w64-mingw32/include
+  INCLUDES = -IC:/libs/SDL2-2.32.10/x86_64-w64-mingw32/include -IC:/Users/abdel/Desktop/TileTwister/include
   OBJECT_DIR = CMakeFiles\2048.dir
   OBJECT_FILE_DIR = CMakeFiles\2048.dir\src
   TARGET_SUPPORT_DIR = CMakeFiles\2048.dir
 
-build CMakeFiles/2048.dir/src/Affichage.cpp.obj: CXX_COMPILER__2048_unscanned_ C$:/Users/abdel/Desktop/TileTwister/src/Affichage.cpp || cmake_object_order_depends_target_2048
-  DEP_FILE = CMakeFiles\2048.dir\src\Affichage.cpp.obj.d
+build CMakeFiles/2048.dir/src/Display.cpp.obj: CXX_COMPILER__2048_unscanned_ C$:/Users/abdel/Desktop/TileTwister/src/Display.cpp || cmake_object_order_depends_target_2048
+  DEP_FILE = CMakeFiles\2048.dir\src\Display.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/libs/SDL2-2.32.10/i686-w64-mingw32/include
+  INCLUDES = -IC:/libs/SDL2-2.32.10/x86_64-w64-mingw32/include -IC:/Users/abdel/Desktop/TileTwister/include
   OBJECT_DIR = CMakeFiles\2048.dir
   OBJECT_FILE_DIR = CMakeFiles\2048.dir\src
   TARGET_SUPPORT_DIR = CMakeFiles\2048.dir
@@ -79,7 +79,7 @@ build CMakeFiles/2048.dir/src/Affichage.cpp.obj: CXX_COMPILER__2048_unscanned_ C
 build CMakeFiles/2048.dir/src/InputManager.cpp.obj: CXX_COMPILER__2048_unscanned_ C$:/Users/abdel/Desktop/TileTwister/src/InputManager.cpp || cmake_object_order_depends_target_2048
   DEP_FILE = CMakeFiles\2048.dir\src\InputManager.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/libs/SDL2-2.32.10/i686-w64-mingw32/include
+  INCLUDES = -IC:/libs/SDL2-2.32.10/x86_64-w64-mingw32/include -IC:/Users/abdel/Desktop/TileTwister/include
   OBJECT_DIR = CMakeFiles\2048.dir
   OBJECT_FILE_DIR = CMakeFiles\2048.dir\src
   TARGET_SUPPORT_DIR = CMakeFiles\2048.dir
@@ -92,9 +92,9 @@ build CMakeFiles/2048.dir/src/InputManager.cpp.obj: CXX_COMPILER__2048_unscanned
 #############################################
 # Link the executable 2048.exe
 
-build 2048.exe: CXX_EXECUTABLE_LINKER__2048_ CMakeFiles/2048.dir/src/main.cpp.obj CMakeFiles/2048.dir/src/Game.cpp.obj CMakeFiles/2048.dir/src/Grille.cpp.obj CMakeFiles/2048.dir/src/Affichage.cpp.obj CMakeFiles/2048.dir/src/InputManager.cpp.obj
-  LINK_LIBRARIES = -lmingw32  -lSDL2main  -lSDL2  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/libs/SDL2-2.32.10/i686-w64-mingw32/lib
+build 2048.exe: CXX_EXECUTABLE_LINKER__2048_ CMakeFiles/2048.dir/src/main.cpp.obj CMakeFiles/2048.dir/src/Game.cpp.obj CMakeFiles/2048.dir/src/Grid.cpp.obj CMakeFiles/2048.dir/src/Display.cpp.obj CMakeFiles/2048.dir/src/InputManager.cpp.obj
+  LINK_LIBRARIES = -lmingw32  -lSDL2main  -lSDL2  -lSDL2_ttf  -lSDL2_gfx  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_PATH = -LC:/libs/SDL2-2.32.10/x86_64-w64-mingw32/lib
   OBJECT_DIR = CMakeFiles\2048.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
