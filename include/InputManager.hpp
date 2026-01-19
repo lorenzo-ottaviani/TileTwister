@@ -1,35 +1,26 @@
-# pragma once
+#pragma once
+#include <SDL2/SDL.h>
 
-#include <iostream>
-
-#include <SDL2/SDL_events.h>
-#include <SDL2/SDL_keycode.h>
+enum class Direction {
+    NONE,
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT
+};
 
 class InputManager {
 public:
-    InputManager();
-    ~InputManager();
-
-    static void readDirection(const SDL_Event& event) {
+    static Direction getDirection(const SDL_Event& event) {
         if(event.type == SDL_KEYDOWN) {
-            if(event.key.keysym.sym == SDLK_UP) {
-                std::cout << "UP" << std::endl;
-            }
-
-            else if(event.key.keysym.sym == SDLK_DOWN) {
-                std::cout << "DOWN" << std::endl;
-            }
-
-            else if(event.key.keysym.sym == SDLK_LEFT) {
-                std::cout << "LEFT" << std::endl;
-            }
-
-            else if(event.key.keysym.sym == SDLK_RIGHT) {
-                std::cout << "RIGHT" << std::endl;
+            switch(event.key.keysym.sym) {
+                case SDLK_UP: return Direction::UP;
+                case SDLK_DOWN: return Direction::DOWN;
+                case SDLK_LEFT: return Direction::LEFT;
+                case SDLK_RIGHT: return Direction::RIGHT;
+                default: return Direction::NONE;
             }
         }
-    };
-
-private:
-    SDL_Keycode game_keys [4] = {SDLK_UP, SDLK_DOWN, SDLK_LEFT, SDLK_RIGHT};
+        return Direction::NONE;
+    }
 };
