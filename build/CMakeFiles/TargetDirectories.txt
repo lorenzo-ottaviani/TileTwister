@@ -1,3 +1,0 @@
-C:/Users/abdel/Desktop/2048/build/CMakeFiles/2048.dir
-C:/Users/abdel/Desktop/2048/build/CMakeFiles/edit_cache.dir
-C:/Users/abdel/Desktop/2048/build/CMakeFiles/rebuild_cache.dir
